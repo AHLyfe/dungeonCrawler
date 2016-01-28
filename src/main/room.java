@@ -8,7 +8,7 @@ public class room extends JPanel{// implements Runnable{
 	//Thread thread = new Thread(this);
 	
 	public tile[][] room;
-	public String[][] rooms = {{"01111110","12222221","12222221","12222221","12222221","01111110"}};
+	public String[][] rooms = {{"0111111110","0122222210","0122222210","0122222210","0122222210","0122222210","0111111110"}};
 
 	private boolean first;
 	
@@ -17,7 +17,7 @@ public class room extends JPanel{// implements Runnable{
 		for(int y = 0; y < rooms[shape].length; y++){
 			for(int x = 0; x < rooms[shape][y].length(); x++){
 				System.out.println(rooms[shape][y].charAt(x));
-				room[x][y] = new tile(Character.getNumericValue(rooms[shape][y].charAt(x)),x*80+40,y*80+40);
+				room[x][y] = new tile(Character.getNumericValue(rooms[shape][y].charAt(x)),x*80,y*80);
 			}
 		}
 	}	
@@ -30,6 +30,7 @@ public class room extends JPanel{// implements Runnable{
 				Tile.draw(g, 0);
 			}
 		}
+		Window.Player.draw(g, 0);
 	}
 
 	private void define() {

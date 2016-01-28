@@ -12,7 +12,10 @@ public class Window{
 	public static JFrame frame;
 	public static JPanel panel;
 	public static final Dimension size = new Dimension(800,600);
-	public static final String title = "DungEon";
+	public static final String title = "Dungeon";
+
+	public static player Player;
+	
 	
 	public static void setComponent(Component component){
 		panel.removeAll();
@@ -54,6 +57,7 @@ public class Window{
 		
 		frame.setVisible(true);
 		room Room = new room(0);
+		Player = new player();
 	}
 	
 	public static void main(String[] args){
