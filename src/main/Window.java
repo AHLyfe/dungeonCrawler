@@ -66,10 +66,10 @@ public class Window{
 		panel = new JPanel(new CardLayout());
 		frame.add(panel);
 		
-		setComponent(new room(0));
+		setComponent(new Room(0));
 		
 		frame.setVisible(true);
-		room Room = new room(0);
+		Room room = new Room(0);
 		player = new Player();
 	}
 	

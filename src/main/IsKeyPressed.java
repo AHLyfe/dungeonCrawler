@@ -27,13 +27,12 @@ public class IsKeyPressed {
                         break;
 
                     case KeyEvent.KEY_RELEASED:
-                    	for(int index = 0; index < keys.size(); index++){
-                    		if(keys.get(index) == ke.getKeyChar()){
-                    			keys.remove(index);
-                    		}
-                    		index--;
+                    	System.out.println(ke.getKeyChar());
+                    	int i = 0;
+                    	char k = ke.getKeyChar();
+                    	while(keys.indexOf(ke.getKeyChar()) != -1){
+                    		keys.remove(k);
                     	}
-                    	
                         break;
                     }
                     return false;
