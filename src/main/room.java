@@ -10,7 +10,6 @@ public class room extends JPanel{// implements Runnable{
 	public tile[][] room;
 	public String[][] rooms = {{"0111111110","0122222210","0122222210","0122222210","0122222210","0122222210","0111111110"}};
 
-	private boolean first;
 	
 	public room(int shape){
 		room = new tile[rooms[shape][0].length()][rooms[shape].length];
@@ -30,11 +29,8 @@ public class room extends JPanel{// implements Runnable{
 				Tile.draw(g, 0);
 			}
 		}
-		Window.Player.draw(g, 0);
+		Window.player.draw(g, 0);
 	}
 
-	private void define() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }

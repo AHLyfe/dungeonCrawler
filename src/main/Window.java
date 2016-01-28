@@ -14,7 +14,7 @@ public class Window{
 	public static final Dimension size = new Dimension(800,600);
 	public static final String title = "Dungeon";
 
-	public static player Player;
+	public static Player player;
 	
 	
 	public static void setComponent(Component component){
@@ -49,7 +49,20 @@ public class Window{
 				}
 			}
 		}.start();
-		
+		new Thread(){
+			public void run(){
+				while(true){
+					try {
+						Thread.sleep(14);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					if(player != null){
+						player.act();
+					}
+				}
+			}
+		}.start();
 		panel = new JPanel(new CardLayout());
 		frame.add(panel);
 		
@@ -57,7 +70,7 @@ public class Window{
 		
 		frame.setVisible(true);
 		room Room = new room(0);
-		Player = new player();
+		player = new Player();
 	}
 	
 	public static void main(String[] args){
